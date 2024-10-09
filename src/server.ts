@@ -11,7 +11,7 @@ import { errorHandler, handle404Error } from "@/utils/errors";
 import routes from "@/routes/routes";
 
 import "./utils/env";
-import "./jobs/crypto-job";
+import "./jobs/crypto-background-job";
 
 const { PORT } = process.env;
 
