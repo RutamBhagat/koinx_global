@@ -8,6 +8,7 @@ import swaggerUi from "swagger-ui-express";
 import swaggerDocument from "../swagger.json";
 import { logger } from "./utils/logger";
 import { errorHandler, handle404Error } from "@/utils/errors";
+import routes from "@/routes/routes";
 
 import "./utils/env";
 import "./jobs/crypto-job";
@@ -55,6 +56,8 @@ app.get("/healthcheck", (_req, res) => {
     timestamp: Date.now(),
   });
 });
+
+app.use("/api", routes);
 
 app.all("*", handle404Error);
 
