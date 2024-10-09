@@ -10,6 +10,10 @@
 
     // Bundler mode
     "moduleResolution": "bundler",
+    // Aliases
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,

@@ -7,6 +7,7 @@ import { mw as requestIp } from "request-ip";
 import swaggerUi from "swagger-ui-express";
 import swaggerDocument from "../swagger.json";
 import { logger } from "./utils/logger";
+import { errorHandler, handle404Error } from "@/utils/errors";
 
 import "./utils/env";
 import "./jobs/crypto-job";
@@ -54,6 +55,10 @@ app.get("/healthcheck", (_req, res) => {
     timestamp: Date.now(),
   });
 });
+
+app.all("*", handle404Error);
+
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   consola.info(`Server running at http://localhost:${PORT}`);
