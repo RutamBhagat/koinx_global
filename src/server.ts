@@ -6,6 +6,7 @@ import rateLimit from "express-rate-limit";
 import { mw as requestIp } from "request-ip";
 import swaggerUi from "swagger-ui-express";
 import swaggerDocument from "../swagger.json";
+import { logger } from "./utils/logger";
 
 import "./utils/env";
 import "./jobs/crypto-job";
@@ -24,6 +25,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(requestIp());
+app.use(logger);
 app.use(
   rateLimit({
     windowMs: 15 * 60 * 1000,
