@@ -1,9 +1,10 @@
-import type { Router } from "express";
-import v1Routes from "@/routes/v1/routes";
-import v2Routes from "@/routes/v2/routes";
-import { createRouter } from "@/utils/create";
+import { Router } from "express";
+import v1Routes from "./v1/routes";
+import v2Routes from "./v2/routes";
 
-export default createRouter((router: Router) => {
-  router.use("/v1", v1Routes);
-  router.use("/v2", v2Routes);
-});
+const mainRouter = Router();
+
+mainRouter.use("/v1", v1Routes);
+mainRouter.use("/v2", v2Routes);
+
+export default mainRouter;

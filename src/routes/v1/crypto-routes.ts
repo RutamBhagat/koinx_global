@@ -1,9 +1,9 @@
-import type { Router } from "express";
+import { Router } from "express";
+import { createRouter } from "../../utils/create";
 import {
   handleGetDeviation,
   handleGetStats,
 } from "@/controllers/crypto-controller";
-import { createRouter } from "@/utils/create";
 
 export default createRouter((router: Router) => {
   router.get("/stats", handleGetStats);

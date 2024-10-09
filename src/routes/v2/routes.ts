@@ -1,7 +1,8 @@
-import type { Router } from "express";
-import cryptoRoutes from "@/routes/v1/crypto-routes";
-import { createRouter } from "@/utils/create";
+import { Router } from "express";
+import cryptoRoutes from "./crypto-routes";
 
-export default createRouter((router: Router) => {
-  router.use("/crypto", cryptoRoutes);
-});
+const v2Router = Router();
+
+v2Router.use("/crypto", cryptoRoutes);
+
+export default v2Router;

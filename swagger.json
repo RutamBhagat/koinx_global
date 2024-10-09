@@ -1,0 +1,81 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Documentation",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Welcome message",
+        "responses": {
+          "200": {
+            "description": "A welcome message"
+          }
+        }
+      }
+    },
+    "/healthcheck": {
+      "get": {
+        "summary": "Health check endpoint",
+        "responses": {
+          "200": {
+            "description": "Server is running"
+          }
+        }
+      }
+    },
+    "/api/v1/crypto/stats": {
+      "get": {
+        "summary": "Get crypto statistics",
+        "parameters": [
+          {
+            "name": "coin",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The name of the crypto coin"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with crypto statistics"
+          }
+        }
+      }
+    },
+    "/api/v1/crypto/deviation": {
+      "get": {
+        "summary": "Get crypto deviation",
+        "parameters": [
+          {
+            "name": "coin",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The name of the crypto coin"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with crypto deviation"
+          }
+        }
+      }
+    },
+    "/api/v2/crypto/": {
+      "get": {
+        "summary": "to be implemented in v2",
+        "responses": {
+          "200": {
+            "description": "to be implemented in v2"
+          }
+        }
+      }
+    }
+  }
+}
