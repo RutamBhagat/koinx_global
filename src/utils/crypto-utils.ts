@@ -4,6 +4,7 @@ import type { z } from "zod";
 import type { CoinType, CoinTypeSchema } from "@/schema/crypto-schema";
 import { CryptoCurrentDataSchema } from "@/schema/crypto-schema";
 import { createCryptocurrencyEntry } from "@/services/crypto-services";
+import type { CryptocurrencyEntry } from "@prisma/client";
 
 const ids: z.infer<typeof CoinTypeSchema>[] = [
   "BITCOIN",
@@ -36,6 +37,8 @@ export async function fetchAndStoreCryptoData() {
 
     consola.log("Fetched Crypto Data:", data);
 
+    const dbEntries: CryptocurrencyEntry[] = [];
+
     for (const coin of ids) {
       const apiCoinName = coin.toLowerCase().replace("_", "-");
       const coinData = data[apiCoinName];
@@ -60,8 +63,12 @@ export async function fetchAndStoreCryptoData() {
         continue;
       }
 
-      await createCryptocurrencyEntry(currentPriceInfoResult.data);
+      dbEntries.push(
+        await createCryptocurrencyEntry(currentPriceInfoResult.data)
+      );
     }
+    consola.log("Stored Crypto Data:", dbEntries);
+    return dbEntries;
   } catch (error) {
     if (axios.isAxiosError(error)) {
       consola.error("Axios error:", error.message);

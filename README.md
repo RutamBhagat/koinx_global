@@ -6,7 +6,7 @@ KoinX Global is a server-side application that fetches and stores cryptocurrency
 
 **API Documentation:** https://koinx-global.onrender.com/api-docs
 
-![Project Screenshot](http://placecorgi.com/1200/650)
+https://github.com/user-attachments/assets/08d86a8c-f424-44f1-9217-23b3d4fddb80
 
 ## How It's Made
 

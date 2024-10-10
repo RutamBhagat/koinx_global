@@ -68,7 +68,7 @@ export async function handleGetDeviation(
     return;
   }
 
-  const entries = await getEntries(mappedCoin);
+  const entries = await getEntries(mappedCoin, 100);
   if (entries.length === 0) {
     res.status(404).json({ error: "No data available for the specified coin" });
     return;
@@ -89,9 +89,13 @@ export async function handleFetchAndStoreData(
   res: Response
 ): Promise<void> {
   try {
-    await fetchAndStoreCryptoData();
-    res.status(200).json({ message: "Data fetched and stored successfully" });
+    const storedData = await fetchAndStoreCryptoData();
+    res.status(200).json({
+      storedData,
+      message: "Data fetched and stored successfully",
+    });
   } catch (error) {
+    console.error("Error in handleFetchAndStoreData:", error);
     res.status(500).json({ error: "Failed to fetch and store data" });
   }
 }

@@ -13,12 +13,12 @@ import mainRouter from "@/routes/routes";
 import "./utils/env";
 import "./jobs/crypto-background-job";
 
-const { PORT } = process.env;
+const { PORT, API_BASE_URL } = process.env;
 
 const app = express();
 
 const corsOptions = {
-  origin: ["http://localhost:3000"],
+  origin: [API_BASE_URL],
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
