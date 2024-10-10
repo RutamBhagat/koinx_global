@@ -67,6 +67,16 @@
         }
       }
     },
+    "/api/v1/crypto/fetch-and-store": {
+      "post": {
+        "summary": "Fetch and store crypto data",
+        "responses": {
+          "201": {
+            "description": "Successful response with crypto data"
+          }
+        }
+      }
+    },
     "/api/v2/crypto/": {
       "get": {
         "summary": "to be implemented in v2",

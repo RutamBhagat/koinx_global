@@ -35,8 +35,6 @@ export async function fetchAndStoreCryptoData() {
     const response = await axios.get(url, { params, timeout: 10000 });
     const data = response.data;
 
-    consola.log("Fetched Crypto Data:", data);
-
     const dbEntries: CryptocurrencyEntry[] = [];
 
     for (const coin of ids) {
@@ -67,7 +65,6 @@ export async function fetchAndStoreCryptoData() {
         await createCryptocurrencyEntry(currentPriceInfoResult.data)
       );
     }
-    consola.log("Stored Crypto Data:", dbEntries);
     return dbEntries;
   } catch (error) {
     if (axios.isAxiosError(error)) {
