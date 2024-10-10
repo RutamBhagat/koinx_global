@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createRouter } from "../../utils/create";
+import { createRouter } from "@/utils/create";
 
 export default createRouter((router: Router) => {
   router.get("/", async (req, res) => {

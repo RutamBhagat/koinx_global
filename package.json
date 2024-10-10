@@ -12,6 +12,7 @@
     "dev": "tsx watch src/server.ts",
     "generate": "bunx prisma generate",
     "migrate": "bunx prisma db push",
+    "studio": "bun run prisma studio",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },

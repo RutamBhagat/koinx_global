@@ -19,7 +19,8 @@ enum CurrencyName {
 model CryptocurrencyEntry {
     id           String       @id @default(auto()) @map("_id") @db.ObjectId
     currencyName CurrencyName
-    timestamp    DateTime
+    created_at   DateTime     @default(now())
+    updated_at   DateTime     @updatedAt
     usd          Float
     usdMarketCap Float
     usd24hChange Float
