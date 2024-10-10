@@ -6,7 +6,9 @@ KoinX Global is a server-side application that fetches and stores cryptocurrency
 
 **API Documentation:** https://koinx-global.onrender.com/api-docs
 
-https://github.com/user-attachments/assets/08d86a8c-f424-44f1-9217-23b3d4fddb80
+**Live Demo**
+
+https://github.com/user-attachments/assets/56ed54e5-b063-42ae-9ae0-2f4d799cd3cb
 
 ## How It's Made
 
@@ -71,7 +73,7 @@ Key features include:
 1. `api/v1/crypto/stats?coin=bitcoin` - Get latest stats for a cryptocurrency
 2. `api/v1/crypto/deviation?coin=bitcoin` - Calculate price deviation for a cryptocurrency
 
-Refer to the [API documentation](https://koinx-global.onrender.com/api-docs) for detailed information on request/response formats.
+Refer to the [API documentation](https://ec2-43-205-139-135.ap-south-1.compute.amazonaws.com/api-docs/) for detailed information on request/response formats.
 
 ## Future Imporvements
 

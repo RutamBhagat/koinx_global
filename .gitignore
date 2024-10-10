@@ -176,3 +176,5 @@ dist
 
 koinx_assignment.pem
 koinx_assignment.pem:Zone.Identifier
+build
+build/server.js
